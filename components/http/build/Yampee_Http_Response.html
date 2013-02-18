@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="robots" content="index, follow, all" />
+        <title>Yampee_Http_Response | API</title>
+                    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+                            </head>
+        <body id="class">
+            <div class="header">
+        <ul>
+            <li><a href="classes.html">Classes</a></li>
+                        <li><a href="interfaces.html">Interfaces</a></li>
+            <li><a href="doc-index.html">Index</a></li>
+            
+        </ul>
+
+        <div id="title">API</div>
+
+            <div class="type">Class</div>
+    <h1><a href=".html"></a>Yampee_Http_Response</h1>
+    </div>
+        <div class="content">
+                <p>class    <strong>Yampee_Http_Response</strong></p>
+
+            <div class="description">
+            <p>HTTP response</p>
+            <p></p>
+        </div>
+    
+    
+            <h2>Properties</h2>
+
+            <table>
+                    <tr>
+                <td class="type" id="property_headers">
+                                                            <a href="Yampee_Http_ParameterBag.html"><abbr title="Yampee_Http_ParameterBag">Yampee_Http_ParameterBag</abbr></a>
+                </td>
+                <td>$headers</td>
+                <td class="last"></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_statusTexts">
+                    static                                        array
+                </td>
+                <td>$statusTexts</td>
+                <td class="last"></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <table>
+                    <tr>
+                <td class="type">
+                    
+                </td>
+                <td class="last">
+                    <a href="#method___construct">__construct</a>(string $content = &#039;&#039;, integer $status = 200, array $headers = array())
+                    <p>Constructor.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="Yampee_Http_Response.html"><abbr title="Yampee_Http_Response">Yampee_Http_Response</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_sendHeaders">sendHeaders</a>()
+                    <p>Sends HTTP headers.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="Yampee_Http_Response.html"><abbr title="Yampee_Http_Response">Yampee_Http_Response</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_sendContent">sendContent</a>()
+                    <p>Sends content for the current web response.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="Yampee_Http_Response.html"><abbr title="Yampee_Http_Response">Yampee_Http_Response</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_send">send</a>()
+                    <p>Sends HTTP headers and content.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    Boolean
+                </td>
+                <td class="last">
+                    <a href="#method_isInvalid">isInvalid</a>()
+                    <p>Is response invalid?</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    Boolean
+                </td>
+                <td class="last">
+                    <a href="#method_isInformational">isInformational</a>()
+                    <p>Is response informative?</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    Boolean
+                </td>
+                <td class="last">
+                    <a href="#method_isSuccessful">isSuccessful</a>()
+                    <p>Is response successful?</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    Boolean
+                </td>
+                <td class="last">
+                    <a href="#method_isRedirection">isRedirection</a>()
+                    <p>Is the response a redirect?</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    Boolean
+                </td>
+                <td class="last">
+                    <a href="#method_isClientError">isClientError</a>()
+                    <p>Is there a client error?</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    Boolean
+                </td>
+                <td class="last">
+                    <a href="#method_isServerError">isServerError</a>()
+                    <p>Was there a server side error?</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    Boolean
+                </td>
+                <td class="last">
+                    <a href="#method_isOk">isOk</a>()
+                    <p>Is the response OK?</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    Boolean
+                </td>
+                <td class="last">
+                    <a href="#method_isForbidden">isForbidden</a>()
+                    <p>Is the response forbidden?</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    Boolean
+                </td>
+                <td class="last">
+                    <a href="#method_isNotFound">isNotFound</a>()
+                    <p>Is the response a not found error?</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    Boolean
+                </td>
+                <td class="last">
+                    <a href="#method_isRedirect">isRedirect</a>(string $location = null)
+                    <p>Is the response a redirect of some form?</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    Boolean
+                </td>
+                <td class="last">
+                    <a href="#method_isEmpty">isEmpty</a>()
+                    <p>Is the response empty?</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    
+                </td>
+                <td class="last">
+                    <a href="#method_setCharset">setCharset</a>(string $charset)
+                    <p></p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    string
+                </td>
+                <td class="last">
+                    <a href="#method_getCharset">getCharset</a>()
+                    <p></p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    
+                </td>
+                <td class="last">
+                    <a href="#method_setContent">setContent</a>(string $content)
+                    <p></p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    string
+                </td>
+                <td class="last">
+                    <a href="#method_getContent">getContent</a>()
+                    <p></p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    
+                </td>
+                <td class="last">
+                    <a href="#method_setHeaders">setHeaders</a>(<a href="Yampee_Http_ParameterBag.html"><abbr title="Yampee_Http_ParameterBag">Yampee_Http_ParameterBag</abbr></a> $headers)
+                    <p></p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="Yampee_Http_ParameterBag.html"><abbr title="Yampee_Http_ParameterBag">Yampee_Http_ParameterBag</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_getHeaders">getHeaders</a>()
+                    <p></p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    
+                </td>
+                <td class="last">
+                    <a href="#method_setStatusCode">setStatusCode</a>(int $statusCode)
+                    <p></p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    int
+                </td>
+                <td class="last">
+                    <a href="#method_getStatusCode">getStatusCode</a>()
+                    <p></p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    
+                </td>
+                <td class="last">
+                    <a href="#method_setStatusText">setStatusText</a>(string $statusText)
+                    <p></p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    string
+                </td>
+                <td class="last">
+                    <a href="#method_getStatusText">getStatusText</a>()
+                    <p></p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    static&nbsp;
+                </td>
+                <td class="last">
+                    <a href="#method_setStatusTexts">setStatusTexts</a>(array $statusTexts)
+                    <p></p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    static&nbsp;array
+                </td>
+                <td class="last">
+                    <a href="#method_getStatusTexts">getStatusTexts</a>()
+                    <p></p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    
+                </td>
+                <td class="last">
+                    <a href="#method_setVersion">setVersion</a>(string $version)
+                    <p></p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    string
+                </td>
+                <td class="last">
+                    <a href="#method_getVersion">getVersion</a>()
+                    <p></p>
+                </td>
+                <td></td>
+            </tr>
+            </table>
+
+
+        <h2>Details</h2>
+
+                        <h3 id="method___construct">
+        <div class="location">at line 122</div>
+        <code>            public            
+    <strong>__construct</strong>(string $content = &#039;&#039;, integer $status = 200, array $headers = array())</code>
+    </h3>
+    <div class="details">
+        <p>Constructor.</p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$content</td>
+                <td>The response content</td>
+            </tr>
+                    <tr>
+                <td>integer</td>
+                <td>$status</td>
+                <td>The response status code</td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$headers</td>
+                <td>An array of response headers</td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_sendHeaders">
+        <div class="location">at line 141</div>
+        <code>            public            <a href="Yampee_Http_Response.html"><abbr title="Yampee_Http_Response">Yampee_Http_Response</abbr></a>
+    <strong>sendHeaders</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Sends HTTP headers.</p>
+        <p></p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="Yampee_Http_Response.html"><abbr title="Yampee_Http_Response">Yampee_Http_Response</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_sendContent">
+        <div class="location">at line 166</div>
+        <code>            public            <a href="Yampee_Http_Response.html"><abbr title="Yampee_Http_Response">Yampee_Http_Response</abbr></a>
+    <strong>sendContent</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Sends content for the current web response.</p>
+        <p></p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="Yampee_Http_Response.html"><abbr title="Yampee_Http_Response">Yampee_Http_Response</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_send">
+        <div class="location">at line 178</div>
+        <code>            public            <a href="Yampee_Http_Response.html"><abbr title="Yampee_Http_Response">Yampee_Http_Response</abbr></a>
+    <strong>send</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Sends HTTP headers and content.</p>
+        <p></p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="Yampee_Http_Response.html"><abbr title="Yampee_Http_Response">Yampee_Http_Response</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_isInvalid">
+        <div class="location">at line 206</div>
+        <code>            public            Boolean
+    <strong>isInvalid</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Is response invalid?</p>
+        <p></p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>Boolean</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_isInformational">
+        <div class="location">at line 215</div>
+        <code>            public            Boolean
+    <strong>isInformational</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Is response informative?</p>
+        <p></p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>Boolean</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_isSuccessful">
+        <div class="location">at line 224</div>
+        <code>            public            Boolean
+    <strong>isSuccessful</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Is response successful?</p>
+        <p></p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>Boolean</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_isRedirection">
+        <div class="location">at line 233</div>
+        <code>            public            Boolean
+    <strong>isRedirection</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Is the response a redirect?</p>
+        <p></p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>Boolean</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_isClientError">
+        <div class="location">at line 242</div>
+        <code>            public            Boolean
+    <strong>isClientError</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Is there a client error?</p>
+        <p></p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>Boolean</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_isServerError">
+        <div class="location">at line 251</div>
+        <code>            public            Boolean
+    <strong>isServerError</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Was there a server side error?</p>
+        <p></p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>Boolean</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_isOk">
+        <div class="location">at line 260</div>
+        <code>            public            Boolean
+    <strong>isOk</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Is the response OK?</p>
+        <p></p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>Boolean</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_isForbidden">
+        <div class="location">at line 269</div>
+        <code>            public            Boolean
+    <strong>isForbidden</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Is the response forbidden?</p>
+        <p></p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>Boolean</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_isNotFound">
+        <div class="location">at line 278</div>
+        <code>            public            Boolean
+    <strong>isNotFound</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Is the response a not found error?</p>
+        <p></p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>Boolean</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_isRedirect">
+        <div class="location">at line 288</div>
+        <code>            public            Boolean
+    <strong>isRedirect</strong>(string $location = null)</code>
+    </h3>
+    <div class="details">
+        <p>Is the response a redirect of some form?</p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$location</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>Boolean</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_isEmpty">
+        <div class="location">at line 297</div>
+        <code>            public            Boolean
+    <strong>isEmpty</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Is the response empty?</p>
+        <p></p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>Boolean</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_setCharset">
+        <div class="location">at line 305</div>
+        <code>            public            
+    <strong>setCharset</strong>(string $charset)</code>
+    </h3>
+    <div class="details">
+        <p></p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$charset</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getCharset">
+        <div class="location">at line 313</div>
+        <code>            public            string
+    <strong>getCharset</strong>()</code>
+    </h3>
+    <div class="details">
+        <p></p>
+        <p></p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_setContent">
+        <div class="location">at line 321</div>
+        <code>            public            
+    <strong>setContent</strong>(string $content)</code>
+    </h3>
+    <div class="details">
+        <p></p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$content</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getContent">
+        <div class="location">at line 329</div>
+        <code>            public            string
+    <strong>getContent</strong>()</code>
+    </h3>
+    <div class="details">
+        <p></p>
+        <p></p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_setHeaders">
+        <div class="location">at line 337</div>
+        <code>            public            
+    <strong>setHeaders</strong>(<a href="Yampee_Http_ParameterBag.html"><abbr title="Yampee_Http_ParameterBag">Yampee_Http_ParameterBag</abbr></a> $headers)</code>
+    </h3>
+    <div class="details">
+        <p></p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><a href="Yampee_Http_ParameterBag.html"><abbr title="Yampee_Http_ParameterBag">Yampee_Http_ParameterBag</abbr></a></td>
+                <td>$headers</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getHeaders">
+        <div class="location">at line 345</div>
+        <code>            public            <a href="Yampee_Http_ParameterBag.html"><abbr title="Yampee_Http_ParameterBag">Yampee_Http_ParameterBag</abbr></a>
+    <strong>getHeaders</strong>()</code>
+    </h3>
+    <div class="details">
+        <p></p>
+        <p></p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="Yampee_Http_ParameterBag.html"><abbr title="Yampee_Http_ParameterBag">Yampee_Http_ParameterBag</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_setStatusCode">
+        <div class="location">at line 353</div>
+        <code>            public            
+    <strong>setStatusCode</strong>(int $statusCode)</code>
+    </h3>
+    <div class="details">
+        <p></p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>int</td>
+                <td>$statusCode</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getStatusCode">
+        <div class="location">at line 361</div>
+        <code>            public            int
+    <strong>getStatusCode</strong>()</code>
+    </h3>
+    <div class="details">
+        <p></p>
+        <p></p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>int</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_setStatusText">
+        <div class="location">at line 369</div>
+        <code>            public            
+    <strong>setStatusText</strong>(string $statusText)</code>
+    </h3>
+    <div class="details">
+        <p></p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$statusText</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getStatusText">
+        <div class="location">at line 377</div>
+        <code>            public            string
+    <strong>getStatusText</strong>()</code>
+    </h3>
+    <div class="details">
+        <p></p>
+        <p></p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_setStatusTexts">
+        <div class="location">at line 385</div>
+        <code>        static    public            
+    <strong>setStatusTexts</strong>(array $statusTexts)</code>
+    </h3>
+    <div class="details">
+        <p></p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>array</td>
+                <td>$statusTexts</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getStatusTexts">
+        <div class="location">at line 393</div>
+        <code>        static    public            array
+    <strong>getStatusTexts</strong>()</code>
+    </h3>
+    <div class="details">
+        <p></p>
+        <p></p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>array</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_setVersion">
+        <div class="location">at line 401</div>
+        <code>            public            
+    <strong>setVersion</strong>(string $version)</code>
+    </h3>
+    <div class="details">
+        <p></p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td>string</td>
+                <td>$version</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getVersion">
+        <div class="location">at line 409</div>
+        <code>            public            string
+    <strong>getVersion</strong>()</code>
+    </h3>
+    <div class="details">
+        <p></p>
+        <p></p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+    
+            </div>
+            <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/" target="_top">Sami, the API Documentation Generator</a>.
+    </div>
+    </body>
+</html>

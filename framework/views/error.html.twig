@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+
+		<title>Yampee</title>
+
+		<style>
+			html {
+				background: #EEEEEE;
+				color: #313131;
+				font-family: Arial;
+				font-size: 13px;
+			}
+			.container {
+				width: 940px;
+				margin: 50px auto;
+				padding: 20px 28px;
+				background: white;
+				border: 1px solid #DFDFDF;
+				border-radius: 16px 16px 16px 16px;
+				margin-bottom: 20px;
+			}
+			h2, h4 {
+				font-weight: lighter;
+			}
+			h4 {
+				font-size: 14px;
+				margin-top: 5px;
+				margin-left: 20px;
+				margin-bottom: 40px;
+			}
+			p {
+				margin: 7px 0;
+				padding: 0;
+			}
+			pre {
+				width: 920px;
+				overflow: hidden;
+			}
+			li {
+				padding: 5px;
+				color: #888;
+			}
+			.error {
+				background: #F9ECEC;
+				color: #AA3333;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			{% block container %}
+				<h2>{{ exception.class }}</h2>
+
+				{% if exception.hasMessage %}
+					<h4>{{ exception.message }}</h4>
+				{% endif %}
+
+				<h3>Trace</h3>
+
+				<ol>
+					{% for line in exception.stack %}
+						<li>{{ line }}</li>
+					{% endfor %}
+				</ol>
+
+				<h3>Logs</h3>
+
+				<ol>
+					{% for line in exception.log %}
+						<li class="{{ line.type }}">{{ line.text }}</li>
+					{% endfor %}
+				</ol>
+			{% endblock %}
+		</div>
+	</body>
+</html>

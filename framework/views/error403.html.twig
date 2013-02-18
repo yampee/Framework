@@ -1,0 +1,26 @@
+
+{% extends 'error.html.twig' %}
+
+{% block container %}
+	<h2>403 - Access denied</h2>
+
+	{% if exception.hasMessage %}
+		<h4>{{ exception.message }}</h4>
+	{% endif %}
+
+	<h3>Trace</h3>
+
+	<ol>
+		{% for line in exception.stack %}
+			<li>{{ line }}</li>
+		{% endfor %}
+	</ol>
+
+	<h3>Logs</h3>
+
+	<ol>
+		{% for line in exception.log %}
+			<li class="{{ line.type }}">{{ line.text }}</li>
+		{% endfor %}
+	</ol>
+{% endblock %}

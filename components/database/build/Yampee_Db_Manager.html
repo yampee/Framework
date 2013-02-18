@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="robots" content="index, follow, all" />
+        <title>Yampee_Db_Manager | API</title>
+                    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+                            </head>
+        <body id="class">
+            <div class="header">
+        <ul>
+            <li><a href="classes.html">Classes</a></li>
+                        <li><a href="interfaces.html">Interfaces</a></li>
+            <li><a href="doc-index.html">Index</a></li>
+            
+        </ul>
+
+        <div id="title">API</div>
+
+            <div class="type">Class</div>
+    <h1><a href=".html"></a>Yampee_Db_Manager</h1>
+    </div>
+        <div class="content">
+                <p>class    <strong>Yampee_Db_Manager</strong></p>
+
+            <div class="description">
+            <p>Entry point for external scripts.</p>
+            <p></p>
+        </div>
+    
+            <h2>Constants</h2>
+
+            <table>
+                    <tr>
+                <td>MYSQL_DATE_PATTERN</td>
+                <td class="last">
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>MYSQL_DATETIME_PATTERN</td>
+                <td class="last">
+                    <p><em></em></p>
+                    <p></p>
+                </td>
+            </tr>
+            </table>
+
+    
+    
+            <h2>Methods</h2>
+
+            <table>
+                    <tr>
+                <td class="type">
+                    
+                </td>
+                <td class="last">
+                    <a href="#method___construct">__construct</a>(<abbr title="$dsn">$dsn</abbr> $dsn, <abbr title="$username">$username</abbr> $username = null, <abbr title="$password">$password</abbr> $password = null, <abbr title="$charset">$charset</abbr> $charset = &#039;UTF8&#039;)
+                    <p>Constructor</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_createQueryBuilder">createQueryBuilder</a>()
+                    <p>Create a query builder object.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    array
+                </td>
+                <td class="last">
+                    <a href="#method_query">query</a>(<abbr title="$query">$query</abbr> $query, array $parameters = array())
+                    <p></p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    array|<abbr title="Yampee_Db_Statement">Yampee_Db_Statement</abbr>
+                </td>
+                <td class="last">
+                    <a href="#method_insert">insert</a>(<abbr title="$table">$table</abbr> $table, <a href="Yampee_Db_Record.html"><abbr title="Yampee_Db_Record">Yampee_Db_Record</abbr></a> $record)
+                    <p>Insert a record in the database.</p>
+                </td>
+                <td></td>
+            </tr>
+            </table>
+
+
+        <h2>Details</h2>
+
+                        <h3 id="method___construct">
+        <div class="location">at line 33</div>
+        <code>            public            
+    <strong>__construct</strong>(<abbr title="$dsn">$dsn</abbr> $dsn, <abbr title="$username">$username</abbr> $username = null, <abbr title="$password">$password</abbr> $password = null, <abbr title="$charset">$charset</abbr> $charset = &#039;UTF8&#039;)</code>
+    </h3>
+    <div class="details">
+        <p>Constructor</p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="$dsn">$dsn</abbr></td>
+                <td>$dsn</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><abbr title="$username">$username</abbr></td>
+                <td>$username</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><abbr title="$password">$password</abbr></td>
+                <td>$password</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><abbr title="$charset">$charset</abbr></td>
+                <td>$charset</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_createQueryBuilder">
+        <div class="location">at line 47</div>
+        <code>            public            <a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a>
+    <strong>createQueryBuilder</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Create a query builder object.</p>
+        <p></p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_query">
+        <div class="location">at line 57</div>
+        <code>            public            array
+    <strong>query</strong>(<abbr title="$query">$query</abbr> $query, array $parameters = array())</code>
+    </h3>
+    <div class="details">
+        <p></p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="$query">$query</abbr></td>
+                <td>$query</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$parameters</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>array</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_insert">
+        <div class="location">at line 89</div>
+        <code>            public            array|<abbr title="Yampee_Db_Statement">Yampee_Db_Statement</abbr>
+    <strong>insert</strong>(<abbr title="$table">$table</abbr> $table, <a href="Yampee_Db_Record.html"><abbr title="Yampee_Db_Record">Yampee_Db_Record</abbr></a> $record)</code>
+    </h3>
+    <div class="details">
+        <p>Insert a record in the database.</p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="$table">$table</abbr></td>
+                <td>$table</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><a href="Yampee_Db_Record.html"><abbr title="Yampee_Db_Record">Yampee_Db_Record</abbr></a></td>
+                <td>$record</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>array|<abbr title="Yampee_Db_Statement">Yampee_Db_Statement</abbr></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+    
+            </div>
+            <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/" target="_top">Sami, the API Documentation Generator</a>.
+    </div>
+    </body>
+</html>

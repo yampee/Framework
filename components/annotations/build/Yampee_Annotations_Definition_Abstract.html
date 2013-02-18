@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="robots" content="index, follow, all" />
+        <title>Yampee_Annotations_Definition_Abstract | API</title>
+                    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+                            </head>
+        <body id="class">
+            <div class="header">
+        <ul>
+            <li><a href="classes.html">Classes</a></li>
+                        <li><a href="interfaces.html">Interfaces</a></li>
+            <li><a href="doc-index.html">Index</a></li>
+            
+        </ul>
+
+        <div id="title">API</div>
+
+            <div class="type">Class</div>
+    <h1><a href=".html"></a>Yampee_Annotations_Definition_Abstract</h1>
+    </div>
+        <div class="content">
+                <p>abstract class    <strong>Yampee_Annotations_Definition_Abstract</strong></p>
+
+            <div class="description">
+            <p>Abstract class that define an annotation.</p>
+            <p></p>
+        </div>
+    
+            <h2>Constants</h2>
+
+            <table>
+                    <tr>
+                <td>TARGET_CLASS</td>
+                <td class="last">
+                    <p><em>Target an annotation on a class.</em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>TARGET_PROPERTY</td>
+                <td class="last">
+                    <p><em>Target an annotation on a property.</em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>TARGET_METHOD</td>
+                <td class="last">
+                    <p><em>Target an annotation on a method.</em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>TARGET_FUNCTION</td>
+                <td class="last">
+                    <p><em>Target an annotation on a function.</em></p>
+                    <p></p>
+                </td>
+            </tr>
+            </table>
+
+    
+    
+            <h2>Methods</h2>
+
+            <table>
+                    <tr>
+                <td class="type">
+                    mixed
+                </td>
+                <td class="last">
+                    <a href="#method_execute">execute</a>(<a href="http://php.net/Reflector"><abbr title="Reflector">Reflector</abbr></a> $reflector, array $arguments)
+                    <p>Execute an action when the annotation is matched.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    string
+                </td>
+                <td class="last">
+                    <a href="#method_getAnnotationName">getAnnotationName</a>()
+                    <p>Define the annotation name.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="Yampee_Annotations_Definition_Node.html"><abbr title="Yampee_Annotations_Definition_Node">Yampee_Annotations_Definition_Node</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_getAttributesRules">getAttributesRules</a>()
+                    <p>Define the annotation attributes rules (types and if they are required or not).</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    array
+                </td>
+                <td class="last">
+                    <a href="#method_getTargets">getTargets</a>()
+                    <p>Define the allowed annotation targets.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    array
+                </td>
+                <td class="last">
+                    <a href="#method_getProperties">getProperties</a>()
+                    <p>Get the annotations properties to match them with attributes.</p>
+                </td>
+                <td></td>
+            </tr>
+            </table>
+
+
+        <h2>Details</h2>
+
+                        <h3 id="method_execute">
+        <div class="location">at line 47</div>
+        <code>            public            mixed
+    <strong>execute</strong>(<a href="http://php.net/Reflector"><abbr title="Reflector">Reflector</abbr></a> $reflector, array $arguments)</code>
+    </h3>
+    <div class="details">
+        <p>Execute an action when the annotation is matched.</p>
+        <p>Optionnally extended.</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><a href="http://php.net/Reflector"><abbr title="Reflector">Reflector</abbr></a></td>
+                <td>$reflector</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>array</td>
+                <td>$arguments</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>mixed</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getAnnotationName">
+        <div class="location">at line 54</div>
+        <code>    abstract        public            string
+    <strong>getAnnotationName</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Define the annotation name.</p>
+        <p></p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>string</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getAttributesRules">
+        <div class="location">at line 61</div>
+        <code>    abstract        public            <a href="Yampee_Annotations_Definition_Node.html"><abbr title="Yampee_Annotations_Definition_Node">Yampee_Annotations_Definition_Node</abbr></a>
+    <strong>getAttributesRules</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Define the annotation attributes rules (types and if they are required or not).</p>
+        <p></p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="Yampee_Annotations_Definition_Node.html"><abbr title="Yampee_Annotations_Definition_Node">Yampee_Annotations_Definition_Node</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getTargets">
+        <div class="location">at line 68</div>
+        <code>    abstract        public            array
+    <strong>getTargets</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Define the allowed annotation targets.</p>
+        <p>If targets are not provided, all target will be accepted.</p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>array</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getProperties">
+        <div class="location">at line 75</div>
+        <code>final            public            array
+    <strong>getProperties</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Get the annotations properties to match them with attributes.</p>
+        <p></p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>array</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+    
+            </div>
+            <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/" target="_top">Sami, the API Documentation Generator</a>.
+    </div>
+    </body>
+</html>

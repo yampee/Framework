@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="robots" content="index, follow, all" />
+        <title>Yampee_Annotations_Definition_Node | API</title>
+                    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+                            </head>
+        <body id="class">
+            <div class="header">
+        <ul>
+            <li><a href="classes.html">Classes</a></li>
+                        <li><a href="interfaces.html">Interfaces</a></li>
+            <li><a href="doc-index.html">Index</a></li>
+            
+        </ul>
+
+        <div id="title">API</div>
+
+            <div class="type">Class</div>
+    <h1><a href=".html"></a>Yampee_Annotations_Definition_Node</h1>
+    </div>
+        <div class="content">
+                <p>class    <strong>Yampee_Annotations_Definition_Node</strong></p>
+
+            <div class="description">
+            <p>Attributes definition node.</p>
+            <p>Use it to rule your attributes :<br />
+<br />
+		public function getAttributesRules()<br />
+		{<br />
+			$rootNode = new Yampee_Annotations_Definition_Node(&#039;root&#039;);<br />
+<br />
+			$rootNode<br />
+				-&gt;anonymousAttr(0, &#039;pattern&#039;, true)<br />
+				-&gt;stringAttr(&#039;name&#039;, false)<br />
+				-&gt;arrayAttr(&#039;defaults&#039;, false)<br />
+				    -&gt;catchAll()<br />
+				-&gt;end()<br />
+				-&gt;arrayAttr(&#039;requirements&#039;, false)<br />
+				    -&gt;catchAll()<br />
+				-&gt;end();<br />
+<br />
+			return $rootNode;<br />
+		}</p>
+        </div>
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table>
+                    <tr>
+                <td class="type">
+                    
+                </td>
+                <td class="last">
+                    <a href="#method___construct">__construct</a>(<abbr title="$name">$name</abbr> $name, bool $required = true, null $parent = null)
+                    <p>Constructor</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="Yampee_Annotations_Definition_Node.html"><abbr title="Yampee_Annotations_Definition_Node">Yampee_Annotations_Definition_Node</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_numericAttr">numericAttr</a>(<abbr title="$name">$name</abbr> $name, bool $required = true)
+                    <p>Define a numeric attribute (integer or double).</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="Yampee_Annotations_Definition_Node.html"><abbr title="Yampee_Annotations_Definition_Node">Yampee_Annotations_Definition_Node</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_booleanAttr">booleanAttr</a>(<abbr title="$name">$name</abbr> $name, bool $required = true)
+                    <p>Define a boolean attribute (true or false).</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="Yampee_Annotations_Definition_Node.html"><abbr title="Yampee_Annotations_Definition_Node">Yampee_Annotations_Definition_Node</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_stringAttr">stringAttr</a>(<abbr title="$name">$name</abbr> $name, bool $required = true)
+                    <p>Define a string attribute.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="Yampee_Annotations_Definition_Node.html"><abbr title="Yampee_Annotations_Definition_Node">Yampee_Annotations_Definition_Node</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_anonymousAttr">anonymousAttr</a>(<abbr title="$position">$position</abbr> $position, <abbr title="$name">$name</abbr> $name, bool $required = true)
+                    <p>Define an anonymous attribute (an attribute that match anything and don&#039;t require name).</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="Yampee_Annotations_Definition_Node.html"><abbr title="Yampee_Annotations_Definition_Node">Yampee_Annotations_Definition_Node</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_arrayAttr">arrayAttr</a>(<abbr title="$name">$name</abbr> $name, bool $required = true)
+                    <p>Define an array attribute.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="Yampee_Annotations_Definition_Node.html"><abbr title="Yampee_Annotations_Definition_Node">Yampee_Annotations_Definition_Node</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_catchAll">catchAll</a>()
+                    <p>Set the current node as catching any kind of datas.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="Yampee_Annotations_Definition_Node.html"><abbr title="Yampee_Annotations_Definition_Node">Yampee_Annotations_Definition_Node</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_end">end</a>()
+                    <p>End the current node and return its parent.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    bool
+                </td>
+                <td class="last">
+                    <a href="#method_has">has</a>(<abbr title="$name">$name</abbr> $name)
+                    <p>Check if the node contains a rule for a child called $name.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    boolean
+                </td>
+                <td class="last">
+                    <a href="#method_isRequired">isRequired</a>(<abbr title="$name">$name</abbr> $name)
+                    <p>Check if the node child called $name is required.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="Yampee_Annotations_Definition_Node.html"><abbr title="Yampee_Annotations_Definition_Node">Yampee_Annotations_Definition_Node</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_setRequired">setRequired</a>(<abbr title="$required">$required</abbr> $required)
+                    <p>Set the current node as required.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    boolean
+                </td>
+                <td class="last">
+                    <a href="#method_getRequired">getRequired</a>()
+                    <p>Get if the current node is required or not.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    boolean
+                </td>
+                <td class="last">
+                    <a href="#method_getCatchAll">getCatchAll</a>()
+                    <p>Get if the current node catch anything or not.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    array
+                </td>
+                <td class="last">
+                    <a href="#method_getChildren">getChildren</a>()
+                    <p>Get the current node children.</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="Yampee_Annotations_Definition_Node.html"><abbr title="Yampee_Annotations_Definition_Node">Yampee_Annotations_Definition_Node</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_getParent">getParent</a>()
+                    <p>Get the current node parent node (or null).</p>
+                </td>
+                <td></td>
+            </tr>
+            </table>
+
+
+        <h2>Details</h2>
+
+                        <h3 id="method___construct">
+        <div class="location">at line 68</div>
+        <code>            public            
+    <strong>__construct</strong>(<abbr title="$name">$name</abbr> $name, bool $required = true, null $parent = null)</code>
+    </h3>
+    <div class="details">
+        <p>Constructor</p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="$name">$name</abbr></td>
+                <td>$name</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>bool</td>
+                <td>$required</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>null</td>
+                <td>$parent</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_numericAttr">
+        <div class="location">at line 86</div>
+        <code>            public            <a href="Yampee_Annotations_Definition_Node.html"><abbr title="Yampee_Annotations_Definition_Node">Yampee_Annotations_Definition_Node</abbr></a>
+    <strong>numericAttr</strong>(<abbr title="$name">$name</abbr> $name, bool $required = true)</code>
+    </h3>
+    <div class="details">
+        <p>Define a numeric attribute (integer or double).</p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="$name">$name</abbr></td>
+                <td>$name</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>bool</td>
+                <td>$required</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="Yampee_Annotations_Definition_Node.html"><abbr title="Yampee_Annotations_Definition_Node">Yampee_Annotations_Definition_Node</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_booleanAttr">
+        <div class="location">at line 104</div>
+        <code>            public            <a href="Yampee_Annotations_Definition_Node.html"><abbr title="Yampee_Annotations_Definition_Node">Yampee_Annotations_Definition_Node</abbr></a>
+    <strong>booleanAttr</strong>(<abbr title="$name">$name</abbr> $name, bool $required = true)</code>
+    </h3>
+    <div class="details">
+        <p>Define a boolean attribute (true or false).</p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="$name">$name</abbr></td>
+                <td>$name</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>bool</td>
+                <td>$required</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="Yampee_Annotations_Definition_Node.html"><abbr title="Yampee_Annotations_Definition_Node">Yampee_Annotations_Definition_Node</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_stringAttr">
+        <div class="location">at line 122</div>
+        <code>            public            <a href="Yampee_Annotations_Definition_Node.html"><abbr title="Yampee_Annotations_Definition_Node">Yampee_Annotations_Definition_Node</abbr></a>
+    <strong>stringAttr</strong>(<abbr title="$name">$name</abbr> $name, bool $required = true)</code>
+    </h3>
+    <div class="details">
+        <p>Define a string attribute.</p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="$name">$name</abbr></td>
+                <td>$name</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>bool</td>
+                <td>$required</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="Yampee_Annotations_Definition_Node.html"><abbr title="Yampee_Annotations_Definition_Node">Yampee_Annotations_Definition_Node</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_anonymousAttr">
+        <div class="location">at line 142</div>
+        <code>            public            <a href="Yampee_Annotations_Definition_Node.html"><abbr title="Yampee_Annotations_Definition_Node">Yampee_Annotations_Definition_Node</abbr></a>
+    <strong>anonymousAttr</strong>(<abbr title="$position">$position</abbr> $position, <abbr title="$name">$name</abbr> $name, bool $required = true)</code>
+    </h3>
+    <div class="details">
+        <p>Define an anonymous attribute (an attribute that match anything and don&#039;t require name).</p>
+        <p>The geiven name is the alias for the property in the annotation class.</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="$position">$position</abbr></td>
+                <td>$position</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><abbr title="$name">$name</abbr></td>
+                <td>$name</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>bool</td>
+                <td>$required</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="Yampee_Annotations_Definition_Node.html"><abbr title="Yampee_Annotations_Definition_Node">Yampee_Annotations_Definition_Node</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_arrayAttr">
+        <div class="location">at line 160</div>
+        <code>            public            <a href="Yampee_Annotations_Definition_Node.html"><abbr title="Yampee_Annotations_Definition_Node">Yampee_Annotations_Definition_Node</abbr></a>
+    <strong>arrayAttr</strong>(<abbr title="$name">$name</abbr> $name, bool $required = true)</code>
+    </h3>
+    <div class="details">
+        <p>Define an array attribute.</p>
+        <p>Restart a node ruling in this array.</p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="$name">$name</abbr></td>
+                <td>$name</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td>bool</td>
+                <td>$required</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="Yampee_Annotations_Definition_Node.html"><abbr title="Yampee_Annotations_Definition_Node">Yampee_Annotations_Definition_Node</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_catchAll">
+        <div class="location">at line 176</div>
+        <code>            public            <a href="Yampee_Annotations_Definition_Node.html"><abbr title="Yampee_Annotations_Definition_Node">Yampee_Annotations_Definition_Node</abbr></a>
+    <strong>catchAll</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Set the current node as catching any kind of datas.</p>
+        <p></p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="Yampee_Annotations_Definition_Node.html"><abbr title="Yampee_Annotations_Definition_Node">Yampee_Annotations_Definition_Node</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_end">
+        <div class="location">at line 187</div>
+        <code>            public            <a href="Yampee_Annotations_Definition_Node.html"><abbr title="Yampee_Annotations_Definition_Node">Yampee_Annotations_Definition_Node</abbr></a>
+    <strong>end</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>End the current node and return its parent.</p>
+        <p></p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="Yampee_Annotations_Definition_Node.html"><abbr title="Yampee_Annotations_Definition_Node">Yampee_Annotations_Definition_Node</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_has">
+        <div class="location">at line 202</div>
+        <code>            public            bool
+    <strong>has</strong>(<abbr title="$name">$name</abbr> $name)</code>
+    </h3>
+    <div class="details">
+        <p>Check if the node contains a rule for a child called $name.</p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="$name">$name</abbr></td>
+                <td>$name</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_isRequired">
+        <div class="location">at line 213</div>
+        <code>            public            boolean
+    <strong>isRequired</strong>(<abbr title="$name">$name</abbr> $name)</code>
+    </h3>
+    <div class="details">
+        <p>Check if the node child called $name is required.</p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="$name">$name</abbr></td>
+                <td>$name</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>boolean</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_setRequired">
+        <div class="location">at line 234</div>
+        <code>            public            <a href="Yampee_Annotations_Definition_Node.html"><abbr title="Yampee_Annotations_Definition_Node">Yampee_Annotations_Definition_Node</abbr></a>
+    <strong>setRequired</strong>(<abbr title="$required">$required</abbr> $required)</code>
+    </h3>
+    <div class="details">
+        <p>Set the current node as required.</p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="$required">$required</abbr></td>
+                <td>$required</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="Yampee_Annotations_Definition_Node.html"><abbr title="Yampee_Annotations_Definition_Node">Yampee_Annotations_Definition_Node</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getRequired">
+        <div class="location">at line 245</div>
+        <code>            public            boolean
+    <strong>getRequired</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Get if the current node is required or not.</p>
+        <p></p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>boolean</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getCatchAll">
+        <div class="location">at line 255</div>
+        <code>            public            boolean
+    <strong>getCatchAll</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Get if the current node catch anything or not.</p>
+        <p></p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>boolean</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getChildren">
+        <div class="location">at line 265</div>
+        <code>            public            array
+    <strong>getChildren</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Get the current node children.</p>
+        <p></p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>array</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_getParent">
+        <div class="location">at line 275</div>
+        <code>            public            <a href="Yampee_Annotations_Definition_Node.html"><abbr title="Yampee_Annotations_Definition_Node">Yampee_Annotations_Definition_Node</abbr></a>
+    <strong>getParent</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Get the current node parent node (or null).</p>
+        <p></p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="Yampee_Annotations_Definition_Node.html"><abbr title="Yampee_Annotations_Definition_Node">Yampee_Annotations_Definition_Node</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+    
+            </div>
+            <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/" target="_top">Sami, the API Documentation Generator</a>.
+    </div>
+    </body>
+</html>

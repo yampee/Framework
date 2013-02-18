@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="robots" content="index, follow, all" />
+        <title>Yampee_Db_QueryBuilder | API</title>
+                    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+                            </head>
+        <body id="class">
+            <div class="header">
+        <ul>
+            <li><a href="classes.html">Classes</a></li>
+                        <li><a href="interfaces.html">Interfaces</a></li>
+            <li><a href="doc-index.html">Index</a></li>
+            
+        </ul>
+
+        <div id="title">API</div>
+
+            <div class="type">Class</div>
+    <h1><a href=".html"></a>Yampee_Db_QueryBuilder</h1>
+    </div>
+        <div class="content">
+                <p>class    <strong>Yampee_Db_QueryBuilder</strong></p>
+
+            <div class="description">
+            <p>Database queries builder</p>
+            <p></p>
+        </div>
+    
+    
+    
+            <h2>Methods</h2>
+
+            <table>
+                    <tr>
+                <td class="type">
+                    
+                </td>
+                <td class="last">
+                    <a href="#method___construct">__construct</a>(<a href="Yampee_Db_Manager.html"><abbr title="Yampee_Db_Manager">Yampee_Db_Manager</abbr></a> $manager)
+                    <p>Constructor</p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_select">select</a>(<abbr title="$fields">$fields</abbr> $fields)
+                    <p></p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_insert">insert</a>(<abbr title="$table">$table</abbr> $table)
+                    <p></p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_update">update</a>(<abbr title="$table">$table</abbr> $table)
+                    <p></p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_delete">delete</a>()
+                    <p></p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_set">set</a>(<abbr title="$fieldName">$fieldName</abbr> $fieldName, <abbr title="$value">$value</abbr> $value)
+                    <p></p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_from">from</a>(<abbr title="$table">$table</abbr> $table)
+                    <p></p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_innerJoin">innerJoin</a>(<abbr title="$value">$value</abbr> $value)
+                    <p></p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_leftJoin">leftJoin</a>(<abbr title="$value">$value</abbr> $value)
+                    <p></p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_where">where</a>(<abbr title="$value">$value</abbr> $value)
+                    <p></p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_andWhere">andWhere</a>(<abbr title="$value">$value</abbr> $value)
+                    <p></p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_orWhere">orWhere</a>(<abbr title="$value">$value</abbr> $value)
+                    <p></p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_groupBy">groupBy</a>(<abbr title="$value">$value</abbr> $value)
+                    <p></p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_having">having</a>(<abbr title="$value">$value</abbr> $value)
+                    <p></p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_orderBy">orderBy</a>(<abbr title="$value">$value</abbr> $value)
+                    <p></p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_limit">limit</a>(<abbr title="$value">$value</abbr> $value)
+                    <p></p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_offset">offset</a>(<abbr title="$value">$value</abbr> $value)
+                    <p></p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    <a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a>
+                </td>
+                <td class="last">
+                    <a href="#method_setParameter">setParameter</a>(<abbr title="$name">$name</abbr> $name, <abbr title="$value">$value</abbr> $value)
+                    <p></p>
+                </td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type">
+                    array
+                </td>
+                <td class="last">
+                    <a href="#method_execute">execute</a>()
+                    <p>Execute the query and return the statement.</p>
+                </td>
+                <td></td>
+            </tr>
+            </table>
+
+
+        <h2>Details</h2>
+
+                        <h3 id="method___construct">
+        <div class="location">at line 101</div>
+        <code>            public            
+    <strong>__construct</strong>(<a href="Yampee_Db_Manager.html"><abbr title="Yampee_Db_Manager">Yampee_Db_Manager</abbr></a> $manager)</code>
+    </h3>
+    <div class="details">
+        <p>Constructor</p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><a href="Yampee_Db_Manager.html"><abbr title="Yampee_Db_Manager">Yampee_Db_Manager</abbr></a></td>
+                <td>$manager</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_select">
+        <div class="location">at line 112</div>
+        <code>            public            <a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a>
+    <strong>select</strong>(<abbr title="$fields">$fields</abbr> $fields)</code>
+    </h3>
+    <div class="details">
+        <p></p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="$fields">$fields</abbr></td>
+                <td>$fields</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table>
+                    <tr>
+                <td><a href="http://php.net/LogicException"><abbr title="LogicException">LogicException</abbr></a></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+                <h3 id="method_insert">
+        <div class="location">at line 130</div>
+        <code>            public            <a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a>
+    <strong>insert</strong>(<abbr title="$table">$table</abbr> $table)</code>
+    </h3>
+    <div class="details">
+        <p></p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="$table">$table</abbr></td>
+                <td>$table</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table>
+                    <tr>
+                <td><a href="http://php.net/LogicException"><abbr title="LogicException">LogicException</abbr></a></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+                <h3 id="method_update">
+        <div class="location">at line 149</div>
+        <code>            public            <a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a>
+    <strong>update</strong>(<abbr title="$table">$table</abbr> $table)</code>
+    </h3>
+    <div class="details">
+        <p></p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="$table">$table</abbr></td>
+                <td>$table</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table>
+                    <tr>
+                <td><a href="http://php.net/LogicException"><abbr title="LogicException">LogicException</abbr></a></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+                <h3 id="method_delete">
+        <div class="location">at line 167</div>
+        <code>            public            <a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a>
+    <strong>delete</strong>()</code>
+    </h3>
+    <div class="details">
+        <p></p>
+        <p></p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table>
+                    <tr>
+                <td><a href="http://php.net/LogicException"><abbr title="LogicException">LogicException</abbr></a></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+                <h3 id="method_set">
+        <div class="location">at line 185</div>
+        <code>            public            <a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a>
+    <strong>set</strong>(<abbr title="$fieldName">$fieldName</abbr> $fieldName, <abbr title="$value">$value</abbr> $value)</code>
+    </h3>
+    <div class="details">
+        <p></p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="$fieldName">$fieldName</abbr></td>
+                <td>$fieldName</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><abbr title="$value">$value</abbr></td>
+                <td>$value</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_from">
+        <div class="location">at line 196</div>
+        <code>            public            <a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a>
+    <strong>from</strong>(<abbr title="$table">$table</abbr> $table)</code>
+    </h3>
+    <div class="details">
+        <p></p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="$table">$table</abbr></td>
+                <td>$table</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_innerJoin">
+        <div class="location">at line 207</div>
+        <code>            public            <a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a>
+    <strong>innerJoin</strong>(<abbr title="$value">$value</abbr> $value)</code>
+    </h3>
+    <div class="details">
+        <p></p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="$value">$value</abbr></td>
+                <td>$value</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_leftJoin">
+        <div class="location">at line 218</div>
+        <code>            public            <a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a>
+    <strong>leftJoin</strong>(<abbr title="$value">$value</abbr> $value)</code>
+    </h3>
+    <div class="details">
+        <p></p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="$value">$value</abbr></td>
+                <td>$value</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_where">
+        <div class="location">at line 229</div>
+        <code>            public            <a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a>
+    <strong>where</strong>(<abbr title="$value">$value</abbr> $value)</code>
+    </h3>
+    <div class="details">
+        <p></p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="$value">$value</abbr></td>
+                <td>$value</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_andWhere">
+        <div class="location">at line 244</div>
+        <code>            public            <a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a>
+    <strong>andWhere</strong>(<abbr title="$value">$value</abbr> $value)</code>
+    </h3>
+    <div class="details">
+        <p></p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="$value">$value</abbr></td>
+                <td>$value</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_orWhere">
+        <div class="location">at line 259</div>
+        <code>            public            <a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a>
+    <strong>orWhere</strong>(<abbr title="$value">$value</abbr> $value)</code>
+    </h3>
+    <div class="details">
+        <p></p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="$value">$value</abbr></td>
+                <td>$value</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_groupBy">
+        <div class="location">at line 274</div>
+        <code>            public            <a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a>
+    <strong>groupBy</strong>(<abbr title="$value">$value</abbr> $value)</code>
+    </h3>
+    <div class="details">
+        <p></p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="$value">$value</abbr></td>
+                <td>$value</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_having">
+        <div class="location">at line 285</div>
+        <code>            public            <a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a>
+    <strong>having</strong>(<abbr title="$value">$value</abbr> $value)</code>
+    </h3>
+    <div class="details">
+        <p></p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="$value">$value</abbr></td>
+                <td>$value</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_orderBy">
+        <div class="location">at line 296</div>
+        <code>            public            <a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a>
+    <strong>orderBy</strong>(<abbr title="$value">$value</abbr> $value)</code>
+    </h3>
+    <div class="details">
+        <p></p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="$value">$value</abbr></td>
+                <td>$value</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_limit">
+        <div class="location">at line 307</div>
+        <code>            public            <a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a>
+    <strong>limit</strong>(<abbr title="$value">$value</abbr> $value)</code>
+    </h3>
+    <div class="details">
+        <p></p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="$value">$value</abbr></td>
+                <td>$value</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_offset">
+        <div class="location">at line 318</div>
+        <code>            public            <a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a>
+    <strong>offset</strong>(<abbr title="$value">$value</abbr> $value)</code>
+    </h3>
+    <div class="details">
+        <p></p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="$value">$value</abbr></td>
+                <td>$value</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_setParameter">
+        <div class="location">at line 330</div>
+        <code>            public            <a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a>
+    <strong>setParameter</strong>(<abbr title="$name">$name</abbr> $name, <abbr title="$value">$value</abbr> $value)</code>
+    </h3>
+    <div class="details">
+        <p></p>
+        <p></p>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table>
+                    <tr>
+                <td><abbr title="$name">$name</abbr></td>
+                <td>$name</td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td><abbr title="$value">$value</abbr></td>
+                <td>$value</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td><a href="Yampee_Db_QueryBuilder.html"><abbr title="Yampee_Db_QueryBuilder">Yampee_Db_QueryBuilder</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+                    </div>
+    </div>
+
+                <h3 id="method_execute">
+        <div class="location">at line 342</div>
+        <code>            public            array
+    <strong>execute</strong>()</code>
+    </h3>
+    <div class="details">
+        <p>Execute the query and return the statement.</p>
+        <p></p>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table>
+        <tr>
+            <td>array</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+                            <h4>Exceptions</h4>
+
+                    <table>
+                    <tr>
+                <td><a href="http://php.net/LogicException"><abbr title="LogicException">LogicException</abbr></a></td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                    </div>
+    </div>
+
+    
+            </div>
+            <div id="footer">
+        Generated by <a href="http://sami.sensiolabs.org/" target="_top">Sami, the API Documentation Generator</a>.
+    </div>
+    </body>
+</html>
