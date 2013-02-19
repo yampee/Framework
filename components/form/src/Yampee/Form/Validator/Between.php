@@ -12,7 +12,7 @@
 /**
  * @author Titouan Galopin <galopintitouan@gmail.com>
  */
-class Yampee_Form_Validator_MaxLength extends Yampee_Form_Validator_Abstract
+class Yampee_Form_Validator_Between extends Yampee_Form_Validator_Abstract
 {
 	/**
 	 * @var integer

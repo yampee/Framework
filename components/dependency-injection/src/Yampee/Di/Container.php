@@ -128,10 +128,17 @@ class Yampee_Di_Container
 
 	/**
 	 * @param $serviceName
-	 * @return mixed
+	 * @return object
+	 * @throws InvalidArgumentException
 	 */
 	public function get($serviceName)
 	{
+		if (! $this->has($serviceName)) {
+			throw new InvalidArgumentException(sprintf(
+				'Non-existent service "%s" requested', $serviceName
+			));
+		}
+
 		return $this->services[$serviceName];
 	}
 

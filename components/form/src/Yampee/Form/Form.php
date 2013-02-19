@@ -17,11 +17,6 @@
 class Yampee_Form_Form
 {
 	/**
-	 * @var string
-	 */
-	protected $method;
-
-	/**
 	 * @var array
 	 */
 	protected $fields;
@@ -43,12 +38,9 @@ class Yampee_Form_Form
 
 	/**
 	 * Constructor
-	 *
-	 * @param string $method
 	 */
-	public function __construct($method = 'post')
+	public function __construct()
 	{
-		$this->method = $method;
 		$this->isValid = false;
 	}
 
@@ -56,9 +48,24 @@ class Yampee_Form_Form
 	 * @param      $name
 	 * @param bool $required
 	 * @return Yampee_Form_Field
+	 * @throws InvalidArgumentException
 	 */
 	public function add($name, $required = true)
 	{
+		if (! is_string($name)) {
+			throw new InvalidArgumentException(sprintf(
+				'Attribute 1 of Yampee_Form_Form::add() must be a string, %s given',
+				gettype($name)
+			));
+		}
+
+		if (! is_bool($required)) {
+			throw new InvalidArgumentException(sprintf(
+				'Attribute 2 of Yampee_Form_Form::add() must be a boolean, %s given',
+				gettype($name)
+			));
+		}
+
 		$this->fields[$name] = new Yampee_Form_Field($name, $required, $this);
 
 		return $this->fields[$name];
@@ -81,7 +88,7 @@ class Yampee_Form_Form
 	public function get($name)
 	{
 		if (! $this->has($name)) {
-			throw new InvalidArgumentException(sprintf('Required for field "%s" does not exists', $name));
+			throw new InvalidArgumentException(sprintf('Non-existent form field "%s" required', $name));
 		}
 
 		return $this->fields[$name];
@@ -96,8 +103,6 @@ class Yampee_Form_Form
 	 */
 	public function bind($data)
 	{
-		$values = array();
-
 		if ($data instanceof Yampee_Http_Request) {
 			$values = $data->getAttributes();
 		} elseif (is_array($data)) {
@@ -126,7 +131,7 @@ class Yampee_Form_Form
 				unset($requiredFields[$key]);
 
 				if ($field->isValid($value)) {
-					$this->values[$key] = $field->filter($value);
+					$this->values[$key] = $field->passInFilters($value);
 				} else {
 					$this->errors[$key] = $field->getErrors();
 				}
@@ -176,13 +181,5 @@ class Yampee_Form_Form
 	public function getFields()
 	{
 		return $this->fields;
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getMethod()
-	{
-		return $this->method;
 	}
 }

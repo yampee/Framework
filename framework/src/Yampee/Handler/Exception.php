@@ -12,7 +12,7 @@
 /**
  * Exceptions handler
  */
-class Yampee_ExceptionHandler
+class Yampee_Handler_Exception
 {
 	/**
 	 * @var boolean
@@ -45,6 +45,10 @@ class Yampee_ExceptionHandler
 	public static function handle(Exception $exception)
 	{
 		$response = new Yampee_Http_Response();
+
+		if ($exception instanceof Yampee_Http_Exception_General) {
+			$response->setStatusCode($exception->getStatusCode());
+		}
 
 		$msg = $exception->getMessage();
 

@@ -43,9 +43,9 @@ abstract class Yampee_Controller extends Yampee_Di_ContainerAware
 	/**
 	 * @return Yampee_Form_Form
 	 */
-	public function createFromBuilder($method = 'POST')
+	public function createFromBuilder()
 	{
-		return $this->get('form_factory')->createFormBuilder($method);
+		return $this->get('form_factory')->createFormBuilder();
 	}
 
 	/**

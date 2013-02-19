@@ -3,7 +3,13 @@
 	<head>
 		<meta charset="UTF-8" />
 
-		<title>Yampee</title>
+		<title>
+			{{ exception.class }}
+
+			{% if exception.hasMessage %}
+				- {{ exception.message }}
+			{% endif %}
+		</title>
 
 		<style>
 			html {
@@ -51,10 +57,11 @@
 	<body>
 		<div class="container">
 			{% block container %}
-				<h2>{{ exception.class }}</h2>
-
 				{% if exception.hasMessage %}
-					<h4>{{ exception.message }}</h4>
+					<h2>{{ exception.message }}</h2>
+					<h4>{{ exception.class }}</h4>
+				{% else %}
+					<h2>{{ exception.class }}</h2>
 				{% endif %}
 
 				<h3>Trace</h3>

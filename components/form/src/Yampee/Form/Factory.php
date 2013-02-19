@@ -17,11 +17,10 @@
 class Yampee_Form_Factory
 {
 	/**
-	 * @param string $method
 	 * @return Yampee_Form_Form
 	 */
-	public function createFormBuilder($method = 'post')
+	public function createFormBuilder()
 	{
-		return new Yampee_Form_Form($method);
+		return new Yampee_Form_Form();
 	}
 }

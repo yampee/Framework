@@ -68,22 +68,17 @@ class Yampee_Kernel
 	 */
 	public function __construct($inDev = false)
 	{
-		set_exception_handler(array('Yampee_ExceptionHandler', 'handle'));
-		Yampee_ExceptionHandler::$inDev = $inDev;
-
 		/*
 		 * Error reporting
 		 *
 		 * Different environments will require different levels of error reporting.
 		 * By default development will show errors but testing and production will hide them.
-		 *
-		if($inDev) {
-			error_reporting(-1);
-			ini_set('display_errors', 1);
-		} else {
-			error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED ^ E_STRICT);
-			ini_set('display_errors', 0);
-		}
+		 */
+		set_exception_handler(array('Yampee_Handler_Exception', 'handle'));
+		Yampee_Handler_Exception::$inDev = $inDev;
+
+		register_shutdown_function(array('Yampee_Handler_Error', 'handle'));
+		Yampee_Handler_Error::$inDev = $inDev;
 
 		/*
 		 * Boot the kernel step by step
@@ -119,8 +114,9 @@ class Yampee_Kernel
 
 		$this->container->build();
 
-		Yampee_ExceptionHandler::$twig = $this->container->get('twig');
-		Yampee_ExceptionHandler::$logger = $this->container->get('logger');
+		Yampee_Handler_Exception::$twig = $this->container->get('twig');
+		Yampee_Handler_Exception::$logger = $this->container->get('logger');
+		Yampee_Handler_Error::$logger = $this->container->get('logger');
 
 		// Twig Extensions
 		$this->loadTwigExtensions();
@@ -153,11 +149,13 @@ class Yampee_Kernel
 		$this->container->get('logger')->debug('Request handled from '.$request->getClientIp());
 		$this->container->set('request', $request);
 
-		Yampee_ExceptionHandler::$clientIp = $request->getClientIp();
+		Yampee_Handler_Exception::$clientIp = $request->getClientIp();
+		Yampee_Handler_Error::$clientIp = $request->getClientIp();
 
 		$locator = $this->generateRootUrl($request);
 
-		Yampee_ExceptionHandler::$url = $locator->getRequestUri();
+		Yampee_Handler_Exception::$url = $locator->getRequestUri();
+		Yampee_Handler_Error::$url = $locator->getRequestUri();
 
 		// Redirect without last "/"
 		if (substr($locator->getRequestUri(), -1) == '/' && rtrim($locator->getRequestUri(), '/') != '') {

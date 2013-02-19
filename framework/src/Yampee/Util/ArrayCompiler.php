@@ -10,7 +10,7 @@
  */
 
 /**
- * Configuration object storage
+ * Array compiler: an objet to compile complex arrays in dot notations arrays.
  */
 class Yampee_Util_ArrayCompiler
 {

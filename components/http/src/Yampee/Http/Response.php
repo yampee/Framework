@@ -351,6 +351,10 @@ class Yampee_Http_Response
 	public function setStatusCode($statusCode)
 	{
 		$this->statusCode = $statusCode;
+
+		if (isset(self::$statusTexts[$this->statusCode])) {
+			$this->setStatusText(self::$statusTexts[$this->statusCode]);
+		}
 	}
 
 	/**
