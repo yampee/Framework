@@ -40,6 +40,11 @@ class Yampee_Routing_Route
 	private $requirements;
 
 	/**
+	 * @var array
+	 */
+	private $requiredAttributes;
+
+	/**
 	 * @var string
 	 */
 	private $action;
@@ -90,11 +95,18 @@ class Yampee_Routing_Route
 
 	/**
 	 * @param array $parameters
-	 * @return string
+	 * @return mixed
+	 * @throws Yampee_Routing_Exception_MissingParameter
 	 */
 	public function generate(array $parameters = array())
 	{
 		$remplacements = array();
+
+		foreach ($this->requiredAttributes as $requiredAttr) {
+			if (! isset($parameters[$requiredAttr])) {
+				throw new Yampee_Routing_Exception_MissingParameter($this, $requiredAttr);
+			}
+		}
 
 		foreach ($parameters as $name => $value) {
 			$remplacements['{'.$name.'}'] = $value;
@@ -230,6 +242,10 @@ class Yampee_Routing_Route
 			return '(?<'.$match[1].'>'.$this->requirements[$match[1]].')';
 		} elseif (array_key_exists($match[1], $this->attributes)) {
 			return '(?<'.$match[1].'>[^/]*)';
+		}
+
+		if (! isset($this->attributes[$match[1]])) {
+			$this->requiredAttributes[$match[1]] = $match[1];
 		}
 
 		return '(?<'.$match[1].'>[^/]+)';

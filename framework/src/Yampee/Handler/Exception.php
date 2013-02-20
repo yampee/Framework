@@ -48,6 +48,8 @@ class Yampee_Handler_Exception
 
 		if ($exception instanceof Yampee_Http_Exception_General) {
 			$response->setStatusCode($exception->getStatusCode());
+		} else {
+			$response->setStatusCode(500);
 		}
 
 		$msg = $exception->getMessage();

@@ -146,7 +146,7 @@ class Yampee_Handler_Error
 </html>';
 
 		$remplacements = array(
-			'{{ error.string }}' => $string,
+			'{{ error.string }}' => ucfirst($string),
 			'{{ error.file }}' => $file,
 			'{{ error.line }}' => $line,
 		);
