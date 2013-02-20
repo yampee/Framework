@@ -57,6 +57,7 @@ class Yampee_Handler_Exception
 		$exception->class = get_class($exception);
 		$exception->hasMessage = ! empty($msg);
 		$exception->stack = explode("\n", $exception->getTraceAsString());
+		$exception->log = array();
 
 		foreach ($exception->stack as $key => $line) {
 			preg_match('#\#([0-9]+) (.+)#i', $line, $match);
@@ -161,11 +162,14 @@ class Yampee_Handler_Exception
 					<html>
 						<head>
 							<meta charset="UTF-8" />
-							<title>An error occured</title>
+							<title>Oops, something went wrong with this page!</title>
 						</head>
 						<body>
-							An error occured. Please contact the administrator.
-							Sorry for the inconvienience.
+							<h1>Oops, something went wrong with this page!</h1>
+							<p>
+								An error occured. Please contact the administrator.
+								Sorry for the inconvienience.
+							</p>
 						</body>
 					</html>
 				');

@@ -60,16 +60,26 @@ class Yampee_Di_Container
 		$this->checkBuildPossibility();
 
 		$parametersRemplacements = array();
+		$arraysParameters = array();
 
 		foreach ($this->parameters as $paramName => $paramValue) {
-			$parametersRemplacements['%'.$paramName.'%'] = $paramValue;
+			if (! is_array($paramValue)) {
+				$parametersRemplacements['%'.$paramName.'%'] = $paramValue;
+			} else {
+				unset($this->parameters[$paramName]);
+				$arraysParameters[$paramName] = $paramValue;
+			}
 		}
 
-		$this->parameters = $this->remplaceParameters(
+		$this->parameters = array_merge($this->remplaceParameters(
 			$this->parameters,
 			array_keys($parametersRemplacements),
 			array_values($parametersRemplacements)
-		);
+		), $this->remplaceParameters(
+			$arraysParameters,
+			array_keys($parametersRemplacements),
+			array_values($parametersRemplacements)
+		));
 
 		foreach ($this->definitions as $name => $definition) {
 			$this->buildDefinition($name);
@@ -406,13 +416,15 @@ class Yampee_Di_Container
 				$parametersRemplacements = array();
 
 				foreach ($this->parameters as $paramName => $paramValue) {
-					$parametersRemplacements['%'.$paramName.'%'] = $paramValue;
+					if (! is_array($paramValue)) {
+						$parametersRemplacements['%'.$paramName.'%'] = $paramValue;
+					}
 				}
 
-				$arguments[] = $this->remplaceParameters(
-					$argument,
+				$arguments[] = str_replace(
 					array_keys($parametersRemplacements),
-					array_values($parametersRemplacements)
+					array_values($parametersRemplacements),
+					$argument
 				);
 			}
 

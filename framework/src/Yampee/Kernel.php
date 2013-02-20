@@ -528,7 +528,9 @@ class Yampee_Kernel
 		 * Boot the translator and load the translations files
 		 */
 		$translator = $this->container->get('translator');
-		$translator->setLocale($this->container->getParameter('framework.locale'));
+		$translator->setLocale(
+			$this->container->get('security.context')->getToken()->getLocale()
+		);
 
 		$appCache = $this->cache->getFile('app.cache');
 
@@ -551,8 +553,6 @@ class Yampee_Kernel
 						);
 					}
 				}
-
-				$it->next();
 			}
 
 			$appCache->set('translations', $translations);
@@ -621,6 +621,17 @@ class Yampee_Kernel
 			// Router
 			'router' => array(
 				'class' => 'Yampee_Routing_Router',
+			),
+
+			// Router
+			'session' => array(
+				'class' => 'Yampee_Http_Session',
+			),
+
+			// Router
+			'security.context' => array(
+				'class' => 'Yampee_Security_Context',
+				'arguments' => array('@session', '%framework.locale%'),
 			),
 
 			// Translator

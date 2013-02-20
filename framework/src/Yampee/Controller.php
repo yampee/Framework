@@ -138,4 +138,28 @@ abstract class Yampee_Controller extends Yampee_Di_ContainerAware
 	{
 		return $this->container->get('request');
 	}
+
+	/**
+	 * @return Yampee_Http_Session
+	 */
+	public function getSession()
+	{
+		return $this->container->get('session');
+	}
+
+	/**
+	 * @return Yampee_Security_UserToken
+	 */
+	public function getUserToken()
+	{
+		return $this->container->get('security.context')->getToken();
+	}
+
+	/**
+	 * @return object
+	 */
+	public function getUser()
+	{
+		return $this->getUserToken()->getUser();
+	}
 }

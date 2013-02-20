@@ -36,7 +36,13 @@ class Yampee_Util_ArrayCompiler
 				$keys[] = $iterator->getSubIterator($depth)->key();
 			}
 
-			$result[implode('.', $keys)] = $leafValue;
+			$result[implode('.', $keys)][] = $leafValue;
+		}
+
+		foreach ($result as $key => $array) {
+			if (count($array) == 1) {
+				$result[$key] = $array[0];
+			}
 		}
 
 		return $result;

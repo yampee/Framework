@@ -81,7 +81,8 @@ class Yampee_Handler_Error
 			}
 		}
 
-		$html = '<!DOCTYPE html>
+		if (self::$inDev) {
+			$html = '<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8" />
@@ -145,28 +146,48 @@ class Yampee_Handler_Error
 	</body>
 </html>';
 
-		$remplacements = array(
-			'{{ error.string }}' => ucfirst($string),
-			'{{ error.file }}' => $file,
-			'{{ error.line }}' => $line,
-		);
+			$remplacements = array(
+				'{{ error.string }}' => ucfirst($string),
+				'{{ error.file }}' => $file,
+				'{{ error.line }}' => $line,
+			);
 
-		$remplacements['{{ logs }}'] = '';
+			$remplacements['{{ logs }}'] = '';
 
-		if (isset($log)) {
-			$remplacements['{{ logs }}'] = '<h3>Logs</h3><ol>';
+			if (isset($log)) {
+				$remplacements['{{ logs }}'] = '<h3>Logs</h3><ol>';
 
-			foreach ($log as $line) {
-				$remplacements['{{ logs }}'] .= '<li class="'.$line['type'].'">'.$line['text'].'</li>';
+				foreach ($log as $line) {
+					$remplacements['{{ logs }}'] .= '<li class="'.$line['type'].'">'.$line['text'].'</li>';
+				}
+
+				$remplacements['{{ logs }}'] .= '</ol>';
 			}
 
-			$remplacements['{{ logs }}'] .= '</ol>';
-		}
+			$response = new Yampee_Http_Response(
+				str_replace(array_keys($remplacements), array_values($remplacements), $html),
+				500
+			);
+		} else {
+			$response = new Yampee_Http_Response('', 500);
 
-		$response = new Yampee_Http_Response(
-			str_replace(array_keys($remplacements), array_values($remplacements), $html),
-			500
-		);
+			$response->setContent('
+					<!DOCTYPE html>
+					<html>
+						<head>
+							<meta charset="UTF-8" />
+							<title>Oops, something went wrong with this page!</title>
+						</head>
+						<body>
+							<h1>Oops, something went wrong with this page!</h1>
+							<p>
+								An error occured. Please contact the administrator.
+								Sorry for the inconvienience.
+							</p>
+						</body>
+					</html>
+				');
+		}
 
 		$response->send();
 		exit;
