@@ -17,192 +17,62 @@
 class Yampee_Log_Logger
 {
 	/**
-	 * @var Yampee_Log_Storage_Interface
+	 * @var string
 	 */
-	protected $storage;
+	protected $directory;
 
 	/**
 	 * @var array
 	 */
-	protected $currentScriptLog;
+	protected $openedFiles;
 
 	/**
-	 * @var boolean
+	 * Constructor
+	 *
+	 * @param string $directory
 	 */
-	protected $store = true;
-
-	/**
-	 * @param Yampee_Log_Storage_Interface $storage
-	 */
-	public function __construct(Yampee_Log_Storage_Interface $storage)
+	public function __construct($directory)
 	{
-		$this->storage = $storage;
-		$this->currentScriptLog = array();
+		$this->directory = $directory;
 	}
 
 	/**
-	 * Destructor: save logs
+	 * @param $name
+	 * @return Yampee_Log_File
 	 */
-	public function __destruct()
+	public function getFile($name)
 	{
-		$this->store();
-	}
-
-	/**
-	 * Store logs manually
-	 */
-	public function store()
-	{
-		if (! $this->store) {
-			return;
+		if (isset($this->openedFiles[$name])) {
+			return $this->openedFiles[$name];
 		}
 
-		$this->storage->store($this->currentScriptLog);
+		if (! $this->hasFile($name)) {
+			file_put_contents($this->directory.'/'.$name, serialize(array()));
+		}
+
+		$this->openedFiles[$name] = new Yampee_Log_File($this->directory.'/'.$name);
+
+		return $this->openedFiles[$name];
 	}
 
 	/**
-	 * @param $message
-	 * @return Yampee_Log_Logger
+	 * @param string $name
+	 * @return bool
 	 */
-	public function error($message)
+	public function hasFile($name)
 	{
-		$this->currentScriptLog[] = '[Error] '.$message;
-
-		return $this;
+		return file_exists($this->directory.'/'.$name);
 	}
 
 	/**
-	 * @param $message
-	 * @return Yampee_Log_Logger
+	 * @param $name
+	 * @return Yampee_Cache_Manager
 	 */
-	public function emergency($message)
+	public function deleteFile($name)
 	{
-		$this->currentScriptLog[] = '[EMERGENCY] '.$message;
-
-		return $this;
-	}
-
-	/**
-	 * @param $message
-	 * @return Yampee_Log_Logger
-	 */
-	public function critical($message)
-	{
-		$this->currentScriptLog[] = '[Critical] '.$message;
-
-		return $this;
-	}
-
-	/**
-	 * @param $message
-	 * @return Yampee_Log_Logger
-	 */
-	public function warning($message)
-	{
-		$this->currentScriptLog[] = '[Warning] '.$message;
-
-		return $this;
-	}
-
-	/**
-	 * @param $message
-	 * @return Yampee_Log_Logger
-	 */
-	public function alert($message)
-	{
-		$this->currentScriptLog[] = '[Alert] '.$message;
-
-		return $this;
-	}
-
-	/**
-	 * @param $message
-	 * @return Yampee_Log_Logger
-	 */
-	public function notice($message)
-	{
-		$this->currentScriptLog[] = '[Notice] '.$message;
-
-		return $this;
-	}
-
-	/**
-	 * @param $message
-	 * @return Yampee_Log_Logger
-	 */
-	public function info($message)
-	{
-		$this->currentScriptLog[] = '[Info] '.$message;
-
-		return $this;
-	}
-
-	/**
-	 * @param $message
-	 * @return Yampee_Log_Logger
-	 */
-	public function debug($message)
-	{
-		$this->currentScriptLog[] = '[Debug] '.$message;
-
-		return $this;
-	}
-
-	/**
-	 * CLear the current script logs
-	 *
-	 * @return Yampee_Log_Logger
-	 */
-	public function clearCurrentScriptLog()
-	{
-		$this->currentScriptLog = array();
-
-		return $this;
-	}
-
-	/**
-	 * @return Yampee_Log_Storage_Interface
-	 */
-	public function getStorage()
-	{
-		return $this->storage;
-	}
-
-	/**
-	 * @param Yampee_Log_Storage_Interface $storage
-	 * @return Yampee_Log_Logger
-	 */
-	public function setStorage(Yampee_Log_Storage_Interface $storage)
-	{
-		$this->storage = $storage;
-
-		return $this;
-	}
-
-	/**
-	 * @return array
-	 */
-	public function getCurrentScriptLog()
-	{
-		return $this->currentScriptLog;
-	}
-
-	/**
-	 * @return Yampee_Log_Logger
-	 */
-	public function enable()
-	{
-		$this->store = true;
-
-		return $this;
-	}
-
-	/**
-	 * @return Yampee_Log_Logger
-	 */
-	public function disable()
-	{
-		$this->store = false;
+		if ($this->hasFile($name)) {
+			unlink($this->directory.'/'.$name);
+		}
 
 		return $this;
 	}

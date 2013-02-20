@@ -61,6 +61,14 @@ class Yampee_Benchmark
 	}
 
 	/**
+	 * @return float
+	 */
+	public function getNow()
+	{
+		return (microtime(true) - $this->times['start']) * 1000;
+	}
+
+	/**
 	 * @return array
 	 */
 	public function getMemoryUsage()

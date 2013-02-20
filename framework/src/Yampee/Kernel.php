@@ -111,8 +111,16 @@ class Yampee_Kernel
 		$this->container->set('kernel', $this);
 
 		$this->container->registerDefinitions($this->getCoreDefinitions());
-
 		$this->container->build();
+
+		// Create the log file using the environnement
+		$loggerFactory = $this->container->get('logger.factory');
+
+		if ($this->inDev) {
+			$this->container->set('logger', $loggerFactory->getFile('dev.log'));
+		} else {
+			$this->container->set('logger', $loggerFactory->getFile('prod.log'));
+		}
 
 		Yampee_Handler_Exception::$twig = $this->container->get('twig');
 		Yampee_Handler_Exception::$logger = $this->container->get('logger');
@@ -174,7 +182,7 @@ class Yampee_Kernel
 		 */
 		$actionsCache = $this->cache->getFile('actions.cache');
 
-		if (! $this->inDev && $actionsCache->has($locator->getRequestUri())) {
+		if ($actionsCache->has($locator->getRequestUri())) {
 			$cache = $actionsCache->get($locator->getRequestUri());
 
 			if ($cache['expire'] < time()) {
@@ -189,7 +197,9 @@ class Yampee_Kernel
 					$request->getMethod(), $locator->getRequestUri(), $request->getClientIp()
 				));
 
-				$this->container->get('logger')->debug('Response sent');
+				$this->container->get('logger')->debug(
+					'Response sent after '.round($this->container->get('benchmark')->getNow(), 2).' ms'
+				);
 
 				$this->container->get('event_dispatcher')->notify('kernel.response', array($response));
 
@@ -200,7 +210,7 @@ class Yampee_Kernel
 		// Dispatch the action
 		$route = $this->getContainer()->get('router')->find($locator->getRequestUri());
 
-		if(! $route) {
+		if (! $route) {
 			throw new Yampee_Http_Exception_NotFound(sprintf(
 				'No route found for GET %s', $locator->getRequestUri()
 			));
@@ -208,7 +218,6 @@ class Yampee_Kernel
 
 		// Call the action
 		$this->container->get('logger')->debug('Action found: '.$route->getAction());
-
 		$this->container->get('event_dispatcher')->notify('kernel.action', array($route));
 
 		$action = explode('::', $route->getAction());
@@ -268,7 +277,8 @@ class Yampee_Kernel
 		 * Catch @Cache() annotation
 		 */
 		$this->annotationsReader->registerAnnotation(
-			new Yampee_Cache_Annotation($this->locator->getRequestUri(), $response, $this->cache->getFile('actions.cache'))
+			new Yampee_Cache_Annotation($this->locator->getRequestUri(), $response,
+				$this->cache->getFile('actions.cache'))
 		);
 		$this->annotationsReader->readReflector($action);
 
@@ -281,7 +291,9 @@ class Yampee_Kernel
 			$route->getAction()
 		));
 
-		$this->container->get('logger')->debug('Response sent');
+		$this->container->get('logger')->debug(
+			'Response sent after '.round($this->container->get('benchmark')->getNow(), 2).' ms'
+		);
 
 		$this->container->get('event_dispatcher')->notify('kernel.response', array($response));
 
@@ -601,13 +613,9 @@ class Yampee_Kernel
 			),
 
 			// Logger
-			'logger.default_storage' => array(
-				'class' => 'Yampee_Log_Storage_Filesystem',
-				'arguments' => array('%framework.log_file%'),
-			),
-			'logger' => array(
+			'logger.factory' => array(
 				'class' => 'Yampee_Log_Logger',
-				'arguments' => array('@logger.default_storage'),
+				'arguments' => array('%framework.logs_dir%'),
 			),
 
 			// Router
